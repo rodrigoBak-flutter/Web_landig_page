@@ -1,4 +1,6 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
 import 'package:web_landing_page/src/widgets/responsive_widget.dart';
@@ -45,10 +47,13 @@ class DesktopHomeContent extends StatelessWidget {
       height: height * .93,
       child: Row(
         children: [
-          Container(
-            width: width * .3,
-            child: Align(
-              child: Lottie.asset('assets/lottie/desk.json'),
+          FadeInLeft(
+                  duration: Duration(milliseconds: 3000),
+            child: Container(
+              width: width * .3,
+              child: Align(
+                child: Lottie.asset('assets/lottie/desk.json'),
+              ),
             ),
           ),
           SizedBox(width: 24),
@@ -57,20 +62,26 @@ class DesktopHomeContent extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  title,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 40,
-                      color: Color.fromARGB(255, 1, 64, 115)),
+                FadeInDown(
+                  duration: Duration(milliseconds: 3000),
+                  child: const Text(
+                    title,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40,
+                        color: Color.fromARGB(255, 1, 64, 115)),
+                  ),
                 ),
                 SizedBox(height: 24),
                 Padding(
                     padding: EdgeInsets.all(5),
-                    child: Text(
-                      subtitle,
-                      style: TextStyle(
-                        fontSize: 20,
+                    child: FadeInUpBig(
+                  duration: Duration(milliseconds: 3000),
+                      child: Text(
+                        subtitle,
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
                       ),
                     )),
                 SizedBox(height: 24),
@@ -80,9 +91,26 @@ class DesktopHomeContent extends StatelessWidget {
                     CupertinoButton(
                       onPressed: () => launchUrlString(linkedin),
                       child: Container(
-                        child: Icon(
+                        height: 80,
+                        width: 80,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(50.0),
+                            bottomLeft: Radius.circular(50.0),
+                            topRight: Radius.circular(50.0),
+                            bottomRight: Radius.circular(50.0),
+                          ),
+                          gradient: LinearGradient(
+                            colors: <Color>[
+                              Color.fromARGB(255, 253, 254, 255),
+                              Color.fromARGB(255, 111, 201, 250),
+                            ],
+                          ),
+                        ),
+                        child: const Icon(
                           FontAwesomeIcons.linkedin,
                           size: 40,
+                          color: Colors.blue,
                         ),
                       ),
                     ),
@@ -90,6 +118,22 @@ class DesktopHomeContent extends StatelessWidget {
                     CupertinoButton(
                       onPressed: () => launchUrlString(git),
                       child: Container(
+                        height: 80,
+                        width: 80,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(50.0),
+                            bottomLeft: Radius.circular(50.0),
+                            topRight: Radius.circular(50.0),
+                            bottomRight: Radius.circular(50.0),
+                          ),
+                          gradient: LinearGradient(
+                            colors: <Color>[
+                              Color.fromARGB(255, 253, 254, 255),
+                              Color.fromARGB(255, 111, 201, 250),
+                            ],
+                          ),
+                        ),
                         child: Icon(
                           FontAwesomeIcons.github,
                           size: 40,
@@ -100,6 +144,22 @@ class DesktopHomeContent extends StatelessWidget {
                     CupertinoButton(
                       onPressed: () => launchUrlString(instagram),
                       child: Container(
+                        height: 80,
+                        width: 80,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(50.0),
+                            bottomLeft: Radius.circular(50.0),
+                            topRight: Radius.circular(50.0),
+                            bottomRight: Radius.circular(50.0),
+                          ),
+                          gradient: LinearGradient(
+                            colors: <Color>[
+                              Color.fromARGB(255, 253, 254, 255),
+                              Color.fromARGB(255, 111, 201, 250),
+                            ],
+                          ),
+                        ),
                         child: Icon(
                           FontAwesomeIcons.instagram,
                           size: 40,
@@ -110,6 +170,22 @@ class DesktopHomeContent extends StatelessWidget {
                     CupertinoButton(
                       onPressed: () => launchUrlString(tiktok),
                       child: Container(
+                        height: 80,
+                        width: 80,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(50.0),
+                            bottomLeft: Radius.circular(50.0),
+                            topRight: Radius.circular(50.0),
+                            bottomRight: Radius.circular(50.0),
+                          ),
+                          gradient: LinearGradient(
+                            colors: <Color>[
+                              Color.fromARGB(255, 253, 254, 255),
+                              Color.fromARGB(255, 111, 201, 250),
+                            ],
+                          ),
+                        ),
                         child: Icon(
                           FontAwesomeIcons.tiktok,
                           size: 40,
@@ -131,7 +207,7 @@ class DesktopHomeContent extends StatelessWidget {
 class MobileHomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-     final size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -147,10 +223,11 @@ class MobileHomeContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-           width: size.width * 0.2,
-           height: size.height * 0.2,
+            width: size.width * 0.2,
+            height: size.height * 0.2,
             child: Align(
-              child: Lottie.asset('assets/lottie/desk.json',fit: BoxFit.contain),
+              child:
+                  Lottie.asset('assets/lottie/desk.json', fit: BoxFit.contain),
             ),
           ),
           SizedBox(width: 24),
@@ -173,6 +250,22 @@ class MobileHomeContent extends StatelessWidget {
               CupertinoButton(
                 onPressed: () => launchUrlString(linkedin),
                 child: Container(
+                  height: 80,
+                  width: 80,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50.0),
+                      bottomLeft: Radius.circular(50.0),
+                      topRight: Radius.circular(50.0),
+                      bottomRight: Radius.circular(50.0),
+                    ),
+                    gradient: LinearGradient(
+                      colors: <Color>[
+                        Color.fromARGB(255, 253, 254, 255),
+                        Color.fromARGB(255, 111, 201, 250),
+                      ],
+                    ),
+                  ),
                   child: Icon(
                     FontAwesomeIcons.linkedin,
                     size: 40,
@@ -183,35 +276,30 @@ class MobileHomeContent extends StatelessWidget {
               CupertinoButton(
                 onPressed: () => launchUrlString(git),
                 child: Container(
+                  height: 80,
+                  width: 80,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50.0),
+                      bottomLeft: Radius.circular(50.0),
+                      topRight: Radius.circular(50.0),
+                      bottomRight: Radius.circular(50.0),
+                    ),
+                    gradient: LinearGradient(
+                      colors: <Color>[
+                        Color.fromARGB(255, 253, 254, 255),
+                        Color.fromARGB(255, 111, 201, 250),
+                      ],
+                    ),
+                  ),
                   child: Icon(
                     FontAwesomeIcons.github,
                     size: 40,
                   ),
                 ),
               ),
-              SizedBox(width: 5),
-              CupertinoButton(
-                onPressed: () => launchUrlString(instagram),
-                child: Container(
-                  child: Icon(
-                    FontAwesomeIcons.instagram,
-                    size: 40,
-                  ),
-                ),
-              ),
-              SizedBox(width: 5),
-              CupertinoButton(
-                onPressed: () => launchUrlString(tiktok),
-                child: Container(
-                  child: Icon(
-                    FontAwesomeIcons.tiktok,
-                    size: 40,
-                  ),
-                ),
-              ),
             ],
           ),
-          SizedBox(width: 5),
         ],
       ),
     );
