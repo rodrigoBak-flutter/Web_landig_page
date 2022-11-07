@@ -18,7 +18,7 @@ class NavBarButton extends HookConsumerWidget {
 
     return MouseRegion(
       onEnter: (value) {
-        textColor.value = Colors.blue;
+        textColor.value = Colors.white;
       },
       onExit: (value) {
         textColor.value = Colors.black;

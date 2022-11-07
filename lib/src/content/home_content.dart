@@ -34,13 +34,20 @@ class DesktopHomeContent extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: <Color>[
+            Color.fromARGB(255, 111, 201, 250),
+            Color.fromARGB(255, 253, 254, 255),
+          ],
+        ),
+      ),
       height: height * .93,
       child: Row(
         children: [
           Container(
             width: width * .3,
             child: Align(
-              
               child: Lottie.asset('assets/lottie/desk.json'),
             ),
           ),
@@ -50,7 +57,7 @@ class DesktopHomeContent extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-               const Text(
+                const Text(
                   title,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -124,13 +131,29 @@ class DesktopHomeContent extends StatelessWidget {
 class MobileHomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
+     final size = MediaQuery.of(context).size;
     return Container(
-      height: height * .93,
-      padding:  EdgeInsets.all(20),
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: <Color>[
+            Color.fromARGB(255, 111, 201, 250),
+            Color.fromARGB(255, 253, 254, 255),
+          ],
+        ),
+      ),
+      height: size.height * .93,
+      padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Container(
+           width: size.width * 0.2,
+           height: size.height * 0.2,
+            child: Align(
+              child: Lottie.asset('assets/lottie/desk.json',fit: BoxFit.contain),
+            ),
+          ),
+          SizedBox(width: 24),
           Text(
             title,
             style: TextStyle(

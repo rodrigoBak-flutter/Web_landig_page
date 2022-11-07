@@ -30,6 +30,14 @@ class DesktopNavBar extends HookConsumerWidget {
     //final navBarColor = isScrolled ? Colors.white : Colors.white;
 
     return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: <Color>[
+            Color.fromARGB(255, 111, 201, 250),
+            Color.fromARGB(255, 253, 254, 255),
+          ],
+        ),
+      ),
      // color: navBarColor,
       child: Padding(
         padding: EdgeInsets.all(20),
@@ -53,14 +61,16 @@ class DesktopNavBar extends HookConsumerWidget {
               onTap: () => ref.read(currentPageProvider.state).state = homeKey,
               text: "Inicio",
             ),
+            
             NavBarButton(
               onTap: () =>
-                  ref.read(currentPageProvider.state).state = featureKey,
+                  ref.read(currentPageProvider.state).state = tecnologiaKey,
               text: "Proyectos",
             ),
+            
             NavBarButton(
               onTap: () =>
-                  ref.read(currentPageProvider.state).state = screenshotKey,
+                  ref.read(currentPageProvider.state).state = toolsKey,
               text: "Tecnologias",
             ),
             NavBarButton(
@@ -68,6 +78,8 @@ class DesktopNavBar extends HookConsumerWidget {
                   ref.read(currentPageProvider.state).state = contactKey,
               text: "Contacto",
             ),
+             
+            
           ],
         ),
       ),
@@ -81,12 +93,20 @@ class MobileNavBar extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final containerHeight = useState<double>(0.0);
-    final isScrolled = ref.watch(scrolledProvider);
+    //final isScrolled = ref.watch(scrolledProvider);
 
-    final navBarColor = isScrolled ? Colors.white : Colors.white;
+   // final navBarColor = isScrolled ? Colors.white : Colors.white;
     return Stack(
       children: [
         AnimatedContainer(
+          decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: <Color>[
+            Color.fromARGB(255, 111, 201, 250),
+            Color.fromARGB(255, 253, 254, 255),
+          ],
+        ),
+      ),
           margin: EdgeInsets.only(top: 70.0),
           duration: Duration(milliseconds: 350),
           curve: Curves.ease,
@@ -101,20 +121,23 @@ class MobileNavBar extends HookConsumerWidget {
                     containerHeight.value = 0;
                   },
                 ),
+                
                 NavBarButton(
                   text: "Proyectos",
                   onTap: () {
-                    ref.read(currentPageProvider.state).state = featureKey;
+                    ref.read(currentPageProvider.state).state = tecnologiaKey;
                     containerHeight.value = 0;
                   },
                 ),
+                
                 NavBarButton(
                   text: "Tecnologias",
                   onTap: () {
-                    ref.read(currentPageProvider.state).state = screenshotKey;
+                    ref.read(currentPageProvider.state).state = toolsKey;
                     containerHeight.value = 0;
                   },
                 ),
+
                 NavBarButton(
                   text: "Contacto",
                   onTap: () {
@@ -122,12 +145,22 @@ class MobileNavBar extends HookConsumerWidget {
                     containerHeight.value = 0;
                   },
                 ),
+                 
+                
               ],
             ),
           ),
         ),
         Container(
-          color: navBarColor,
+          decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: <Color>[
+            Color.fromARGB(255, 111, 201, 250),
+            Color.fromARGB(255, 253, 254, 255),
+          ],
+        ),
+      ),
+          
           child: Padding(
             padding: EdgeInsets.all(16),
             child: Row(
@@ -148,7 +181,7 @@ class MobileNavBar extends HookConsumerWidget {
                 ),
                 Material(
                   child: InkWell(
-                    splashColor: Colors.white60,
+                    splashColor: Colors.white,
                     onTap: () {
                       final height = containerHeight.value > 0 ? 0.0 : 240.0;
                       containerHeight.value = height;

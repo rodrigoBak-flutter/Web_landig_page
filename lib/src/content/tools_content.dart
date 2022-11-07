@@ -1,10 +1,10 @@
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:web_landing_page/src/widgets/cards_widget.dart';
 import 'package:web_landing_page/src/widgets/responsive_widget.dart';
 
-
-class ContactContent extends ResponsiveWidget {
-  const ContactContent({Key? key}) : super(key: key);
+class ToolsContent extends ResponsiveWidget {
+  const ToolsContent({Key? key}) : super(key: key);
 
   @override
   Widget buildDesktop(BuildContext context) => DesktopHomeContent();
@@ -29,7 +29,19 @@ class DesktopHomeContent extends StatelessWidget {
         ),
       ),
       height: height * .93,
-     
+      child: Row(
+        // ignore: prefer_const_literals_to_create_immutables
+        children: [
+          const CardWidget(
+            image: 'assets/images/node.png',
+            title: 'Node.js',
+            grandientRight: Color.fromARGB(255, 253, 254, 255),
+            grandientLeft: Color.fromARGB(255, 111, 201, 250),
+            backgroundColorAvatar: Colors.white,
+            color: Colors.black,
+          ),
+        ],
+      ),
     );
   }
 }
@@ -53,7 +65,6 @@ class MobileHomeContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          
           SizedBox(width: 5),
         ],
       ),

@@ -1,15 +1,15 @@
+import 'package:web_landing_page/src/content/tools_content.dart';
 import 'package:web_landing_page/src/content/contact_content.dart';
-import 'package:web_landing_page/src/content/feature_content.dart';
 import 'package:web_landing_page/src/content/home_content.dart';
-import 'package:web_landing_page/src/content/screenshots_content.dart';
+import 'package:web_landing_page/src/content/projects_content.dart';
 import 'package:web_landing_page/src/navigation_bar/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 final homeKey =  GlobalKey();
-final featureKey =  GlobalKey();
-final screenshotKey =  GlobalKey();
+final toolsKey =  GlobalKey();
+final tecnologiaKey =  GlobalKey();
 final contactKey =  GlobalKey();
 
 final currentPageProvider = StateProvider<GlobalKey>((_) => homeKey);
@@ -53,15 +53,15 @@ class MyWebPage extends HookConsumerWidget {
           width: maxWith,
           child: Column(
             children: [
-              NavBar(),
+             const NavBar(),
               Expanded(
                 child: SingleChildScrollView(
                   controller: _controller,
                   child: Column(
                     children: <Widget>[
                       HomeContent(key: homeKey),
-                      FeaturesContent(key: featureKey),
-                      ScreenshotsContent(key: screenshotKey),
+                      ProjectsContent(key: tecnologiaKey),
+                      ToolsContent(key: toolsKey),
                       ContactContent(key: contactKey),
                       SizedBox(height: 50)
                     ],
