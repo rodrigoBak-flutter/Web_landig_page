@@ -4,10 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 
-/*
-  platformViewRegistry va a lanzar un error, pero aun asi funciona. Es algo que con el tiempo solucionaran en Flutter
 
- */
 void main() {
   setPathUrlStrategy();
   runApp(

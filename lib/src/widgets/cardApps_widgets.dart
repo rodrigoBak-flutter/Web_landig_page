@@ -7,12 +7,12 @@ import 'package:flutter/material.dart';
   
 */
 
-class CardWidget extends StatefulWidget {
-  final String image, title;
+class CardAppsWidget extends StatefulWidget {
+  final String image, title, imagenApps;
   final Color color, grandientLeft, grandientRight, backgroundColorAvatar;
   final double sizeHeight, sizeWith;
 
-  const CardWidget(
+  const CardAppsWidget(
       {super.key,
       required this.image,
       required this.title,
@@ -21,13 +21,14 @@ class CardWidget extends StatefulWidget {
       required this.grandientRight,
       required this.backgroundColorAvatar,
       required this.sizeHeight,
-      required this.sizeWith});
+      required this.sizeWith,
+      required this.imagenApps});
 
   @override
-  State<CardWidget> createState() => _CardWidgetState();
+  State<CardAppsWidget> createState() => _CardAppsWidgetState();
 }
 
-class _CardWidgetState extends State<CardWidget> {
+class _CardAppsWidgetState extends State<CardAppsWidget> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -51,14 +52,18 @@ class _CardWidgetState extends State<CardWidget> {
                 ),
                 borderRadius: BorderRadius.circular(18),
               ),
+              child: Image.asset(
+                widget.imagenApps,
+                
+              ),
             ),
           ),
 
           //use the positioned widget to place
 
           Positioned(
-            top: 0,
-            right: 40,
+            bottom: 0,
+            left: 40,
             // ignore: sized_box_for_whitespace
             child: Container(
               height: 150,

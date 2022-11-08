@@ -48,7 +48,7 @@ class DesktopHomeContent extends StatelessWidget {
       child: Row(
         children: [
           FadeInLeft(
-                  duration: Duration(milliseconds: 3000),
+            duration: Duration(milliseconds: 3000),
             child: Container(
               width: width * .3,
               child: Align(
@@ -76,7 +76,7 @@ class DesktopHomeContent extends StatelessWidget {
                 Padding(
                     padding: EdgeInsets.all(5),
                     child: FadeInUpBig(
-                  duration: Duration(milliseconds: 3000),
+                      duration: Duration(milliseconds: 3000),
                       child: Text(
                         subtitle,
                         style: TextStyle(
@@ -88,107 +88,119 @@ class DesktopHomeContent extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CupertinoButton(
-                      onPressed: () => launchUrlString(linkedin),
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(50.0),
-                            bottomLeft: Radius.circular(50.0),
-                            topRight: Radius.circular(50.0),
-                            bottomRight: Radius.circular(50.0),
+                    Spin(
+                      delay: const Duration(milliseconds: 2000),
+                      child: CupertinoButton(
+                        onPressed: () => launchUrlString(linkedin),
+                        child: Container(
+                          height: 80,
+                          width: 80,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(50.0),
+                              bottomLeft: Radius.circular(50.0),
+                              topRight: Radius.circular(50.0),
+                              bottomRight: Radius.circular(50.0),
+                            ),
+                            gradient: LinearGradient(
+                              colors: <Color>[
+                                Color.fromARGB(255, 253, 254, 255),
+                                Color.fromARGB(255, 111, 201, 250),
+                              ],
+                            ),
                           ),
-                          gradient: LinearGradient(
-                            colors: <Color>[
-                              Color.fromARGB(255, 253, 254, 255),
-                              Color.fromARGB(255, 111, 201, 250),
-                            ],
+                          child: const Icon(
+                            FontAwesomeIcons.linkedin,
+                            size: 40,
+                            color: Colors.blue,
                           ),
-                        ),
-                        child: const Icon(
-                          FontAwesomeIcons.linkedin,
-                          size: 40,
-                          color: Colors.blue,
                         ),
                       ),
                     ),
                     SizedBox(width: 24),
-                    CupertinoButton(
-                      onPressed: () => launchUrlString(git),
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(50.0),
-                            bottomLeft: Radius.circular(50.0),
-                            topRight: Radius.circular(50.0),
-                            bottomRight: Radius.circular(50.0),
+                    Spin(
+                      delay: const Duration(milliseconds: 2000),
+                      child: CupertinoButton(
+                        onPressed: () => launchUrlString(git),
+                        child: Container(
+                          height: 80,
+                          width: 80,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(50.0),
+                              bottomLeft: Radius.circular(50.0),
+                              topRight: Radius.circular(50.0),
+                              bottomRight: Radius.circular(50.0),
+                            ),
+                            gradient: LinearGradient(
+                              colors: <Color>[
+                                Color.fromARGB(255, 253, 254, 255),
+                                Color.fromARGB(255, 111, 201, 250),
+                              ],
+                            ),
                           ),
-                          gradient: LinearGradient(
-                            colors: <Color>[
-                              Color.fromARGB(255, 253, 254, 255),
-                              Color.fromARGB(255, 111, 201, 250),
-                            ],
+                          child: Icon(
+                            FontAwesomeIcons.github,
+                            size: 40,
                           ),
-                        ),
-                        child: Icon(
-                          FontAwesomeIcons.github,
-                          size: 40,
                         ),
                       ),
                     ),
                     SizedBox(width: 24),
-                    CupertinoButton(
-                      onPressed: () => launchUrlString(instagram),
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(50.0),
-                            bottomLeft: Radius.circular(50.0),
-                            topRight: Radius.circular(50.0),
-                            bottomRight: Radius.circular(50.0),
+                    Spin(
+                      delay: const Duration(milliseconds: 2000),
+                      child: CupertinoButton(
+                        onPressed: () => launchUrlString(instagram),
+                        child: Container(
+                          height: 80,
+                          width: 80,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(50.0),
+                              bottomLeft: Radius.circular(50.0),
+                              topRight: Radius.circular(50.0),
+                              bottomRight: Radius.circular(50.0),
+                            ),
+                            gradient: LinearGradient(
+                              colors: <Color>[
+                                Color.fromARGB(255, 253, 254, 255),
+                                Color.fromARGB(255, 111, 201, 250),
+                              ],
+                            ),
                           ),
-                          gradient: LinearGradient(
-                            colors: <Color>[
-                              Color.fromARGB(255, 253, 254, 255),
-                              Color.fromARGB(255, 111, 201, 250),
-                            ],
+                          child: Icon(
+                            FontAwesomeIcons.instagram,
+                            size: 40,
                           ),
-                        ),
-                        child: Icon(
-                          FontAwesomeIcons.instagram,
-                          size: 40,
                         ),
                       ),
                     ),
                     SizedBox(width: 24),
-                    CupertinoButton(
-                      onPressed: () => launchUrlString(tiktok),
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(50.0),
-                            bottomLeft: Radius.circular(50.0),
-                            topRight: Radius.circular(50.0),
-                            bottomRight: Radius.circular(50.0),
+                    Spin(
+                      delay: const Duration(milliseconds: 2000),
+                      child: CupertinoButton(
+                        onPressed: () => launchUrlString(tiktok),
+                        child: Container(
+                          height: 80,
+                          width: 80,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(50.0),
+                              bottomLeft: Radius.circular(50.0),
+                              topRight: Radius.circular(50.0),
+                              bottomRight: Radius.circular(50.0),
+                            ),
+                            gradient: LinearGradient(
+                              colors: <Color>[
+                                Color.fromARGB(255, 253, 254, 255),
+                                Color.fromARGB(255, 111, 201, 250),
+                              ],
+                            ),
                           ),
-                          gradient: LinearGradient(
-                            colors: <Color>[
-                              Color.fromARGB(255, 253, 254, 255),
-                              Color.fromARGB(255, 111, 201, 250),
-                            ],
+                          child: Icon(
+                            FontAwesomeIcons.tiktok,
+                            size: 40,
                           ),
-                        ),
-                        child: Icon(
-                          FontAwesomeIcons.tiktok,
-                          size: 40,
                         ),
                       ),
                     ),

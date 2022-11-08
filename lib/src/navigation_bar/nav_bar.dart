@@ -47,7 +47,7 @@ class DesktopNavBar extends HookConsumerWidget {
               "assets/images/logo.png",
               height: 40.0,
             ),
-            SizedBox(width: 10.0),
+            SizedBox(width: 20.0),
             Text(
               title,
               style: TextStyle(
