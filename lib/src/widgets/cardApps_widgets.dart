@@ -54,7 +54,6 @@ class _CardAppsWidgetState extends State<CardAppsWidget> {
               ),
               child: Image.asset(
                 widget.imagenApps,
-                
               ),
             ),
           ),
@@ -88,81 +87,6 @@ class _CardAppsWidgetState extends State<CardAppsWidget> {
                   fontWeight: FontWeight.w700),
             ),
           ),
-
-          Positioned(
-            top: 100,
-            left: 40,
-            child: Text(
-              "",
-              style: TextStyle(
-                  color: widget.color,
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w500),
-            ),
-          ),
-
-          Positioned(
-            top: 120,
-            left: 40,
-            child: Text(
-              "",
-              style: TextStyle(
-                  color: widget.color,
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w500),
-            ),
-          ),
-
-          Positioned(
-            bottom: 55,
-            left: 20,
-            child: SizedBox(
-              width: 300,
-              child:
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "",
-                      style: TextStyle(
-                          color: widget.color,
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  width: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "",
-                      style: TextStyle(
-                          color: widget.color,
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ],
-                )
-              ]),
-            ),
-          ),
-
-          const Positioned(
-            right: 40,
-            top: 85,
-            child: Center(
-              child: Text(
-                "",
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-              ),
-            ),
-          )
         ],
       ),
     );

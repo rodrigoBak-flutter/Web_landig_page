@@ -1,7 +1,7 @@
+import 'package:flutter/cupertino.dart';
 
-import 'package:flutter/material.dart';
 import 'package:web_landing_page/src/widgets/responsive_widget.dart';
-
+import 'package:web_landing_page/src/widgets/swiper_widget.dart';
 
 class ContactContent extends ResponsiveWidget {
   const ContactContent({Key? key}) : super(key: key);
@@ -16,8 +16,7 @@ class ContactContent extends ResponsiveWidget {
 class DesktopHomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    final size = MediaQuery.of(context).size;
 
     return Container(
       decoration: const BoxDecoration(
@@ -28,8 +27,8 @@ class DesktopHomeContent extends StatelessWidget {
           ],
         ),
       ),
-      height: height * .93,
-     
+      height: size.height * .93,
+      child: CupertinoButton(onPressed: () {}, child: SwiperCardWidget()),
     );
   }
 }
@@ -53,7 +52,6 @@ class MobileHomeContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          
           SizedBox(width: 5),
         ],
       ),

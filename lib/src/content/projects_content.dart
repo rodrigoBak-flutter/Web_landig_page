@@ -37,7 +37,7 @@ class DesktopHomeContent extends StatelessWidget {
       width: double.infinity,
       child: CupertinoButton(
         child: const CardAppsWidget(
-          title: 'Proyectos Flutter',
+          title: 'Proyectos',
           image: 'assets/images/bak_app.png',
           imagenApps: 'assets/images/flutter_apps.png',
           grandientRight: Color.fromARGB(255, 253, 254, 255),
