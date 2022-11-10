@@ -76,7 +76,7 @@ class DesktopNavBar extends HookConsumerWidget {
             NavBarButton(
               onTap: () =>
                   ref.read(currentPageProvider.state).state = contactKey,
-              text: "Contacto",
+              text: "+ Proyectos",
             ),
              
             
@@ -139,7 +139,7 @@ class MobileNavBar extends HookConsumerWidget {
                 ),
 
                 NavBarButton(
-                  text: "Contacto",
+                  text: "+ Proyectos",
                   onTap: () {
                     ref.read(currentPageProvider.state).state = contactKey;
                     containerHeight.value = 0;

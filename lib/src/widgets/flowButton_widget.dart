@@ -74,7 +74,7 @@ class _FlowButtonState extends State<FlowButton>
   }
 
   whatsapp() async {
-    const url = "whatsapp://send?phone=+34617154892";
+    const url = "whatsapp://send?phone=+CodigoyNumero";
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -84,9 +84,10 @@ class _FlowButtonState extends State<FlowButton>
 
   email() async {
     final Uri _emailurl = Uri(
-        scheme: 'Rodrigo',
-        path: 'rodrigobakapp@gmail.com',
-        queryParameters: {'subject': ' '});
+      scheme: 'maito',
+      path: 'ejemplo@gmail.com',
+     // queryParameters: {'subject': ' '},
+    );
 
     if (await canLaunch(_emailurl.toString())) {
       await launch(_emailurl.toString());
