@@ -6,11 +6,12 @@ import 'package:web_landing_page/src/navigation_bar/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:web_landing_page/src/widgets/flowButton_widget.dart';
 
-final homeKey =  GlobalKey();
-final toolsKey =  GlobalKey();
-final tecnologiaKey =  GlobalKey();
-final contactKey =  GlobalKey();
+final homeKey = GlobalKey();
+final toolsKey = GlobalKey();
+final tecnologiaKey = GlobalKey();
+final contactKey = GlobalKey();
 
 final currentPageProvider = StateProvider<GlobalKey>((_) => homeKey);
 final scrolledProvider = StateProvider<bool>((_) => false);
@@ -33,7 +34,6 @@ class MyWebPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final _controller = useScrollController();
 
-    
     useEffect(() {
       _controller.addListener(() => onScroll(_controller, ref));
       return _controller.dispose;
@@ -53,7 +53,7 @@ class MyWebPage extends HookConsumerWidget {
           width: maxWith,
           child: Column(
             children: [
-             const NavBar(),
+              const NavBar(),
               Expanded(
                 child: SingleChildScrollView(
                   controller: _controller,
@@ -63,7 +63,6 @@ class MyWebPage extends HookConsumerWidget {
                       ProjectsContent(key: tecnologiaKey),
                       ToolsContent(key: toolsKey),
                       ContactContent(key: contactKey),
-                      SizedBox(height: 50)
                     ],
                   ),
                 ),
@@ -72,6 +71,7 @@ class MyWebPage extends HookConsumerWidget {
           ),
         ),
       ),
+      floatingActionButton: FlowButton(),
     );
   }
 }

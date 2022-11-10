@@ -53,12 +53,11 @@ class _CardWidgetState extends State<CardWidget> {
               ),
             ),
           ),
-
           //use the positioned widget to place
-
           Positioned(
-            top: 0,
-            right: 40,
+            top: 20,
+            bottom: 5,
+            left: 60,
             // ignore: sized_box_for_whitespace
             child: Container(
               height: 150,
@@ -66,14 +65,17 @@ class _CardWidgetState extends State<CardWidget> {
               child: CircleAvatar(
                 backgroundColor: widget.backgroundColorAvatar,
                 // ignore: sort_child_properties_last
-                child: Image.asset(widget.image),
+                child: Image.asset(
+                  widget.image,
+                  fit: BoxFit.cover,
+                ),
                 radius: 30,
               ),
             ),
           ),
 
           Positioned(
-            top: 25,
+            top: 15,
             left: 30,
             child: Text(
               widget.title,
@@ -83,81 +85,6 @@ class _CardWidgetState extends State<CardWidget> {
                   fontWeight: FontWeight.w700),
             ),
           ),
-
-          Positioned(
-            top: 100,
-            left: 40,
-            child: Text(
-              "",
-              style: TextStyle(
-                  color: widget.color,
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w500),
-            ),
-          ),
-
-          Positioned(
-            top: 120,
-            left: 40,
-            child: Text(
-              "",
-              style: TextStyle(
-                  color: widget.color,
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w500),
-            ),
-          ),
-
-          Positioned(
-            bottom: 55,
-            left: 20,
-            child: SizedBox(
-              width: 300,
-              child:
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "",
-                      style: TextStyle(
-                          color: widget.color,
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  width: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "",
-                      style: TextStyle(
-                          color: widget.color,
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ],
-                )
-              ]),
-            ),
-          ),
-
-          const Positioned(
-            right: 40,
-            top: 85,
-            child: Center(
-              child: Text(
-                "",
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-              ),
-            ),
-          )
         ],
       ),
     );

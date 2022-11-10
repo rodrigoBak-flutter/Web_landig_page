@@ -75,7 +75,7 @@ class DesktopHomeContent extends StatelessWidget {
                 SizedBox(height: 24),
                 Padding(
                     padding: EdgeInsets.all(5),
-                    child: FadeInUpBig(
+                    child: FadeInDown(
                       duration: Duration(milliseconds: 3000),
                       child: Text(
                         subtitle,

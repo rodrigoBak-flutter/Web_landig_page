@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 import 'package:web_landing_page/src/widgets/responsive_widget.dart';
-import 'package:web_landing_page/src/widgets/swiper_widget.dart';
+
 
 class ContactContent extends ResponsiveWidget {
   const ContactContent({Key? key}) : super(key: key);
@@ -27,8 +27,8 @@ class DesktopHomeContent extends StatelessWidget {
           ],
         ),
       ),
-      height: size.height * .93,
-      child: CupertinoButton(onPressed: () {}, child: SwiperCardWidget()),
+      height: size.height * .99,
+      
     );
   }
 }
