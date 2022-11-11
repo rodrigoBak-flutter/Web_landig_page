@@ -40,7 +40,7 @@ class DesktopHomeContent extends StatelessWidget {
           Container(
             width: size.width * 0.5,
             height: size.height * 0.5,
-            child: Lottie.asset('assets/lottie/working.json'),
+            child: Image.asset('assets/images/idea.png'),
           ),
           Column(
             children: [
@@ -99,7 +99,7 @@ class MobileHomeContent extends StatelessWidget {
           Container(
             width: size.width * 0.3,
             height: size.height * 0.25,
-            child: Lottie.asset('assets/lottie/working.json'),
+            child: Image.asset('assets/images/idea.png'),
           ),
           CupertinoButton(
             onPressed: () => launchUrlString(tikTok),

@@ -52,7 +52,7 @@ class DesktopHomeContent extends StatelessWidget {
             child: Container(
               width: width * .3,
               child: Align(
-                child: Lottie.asset('assets/lottie/desk.json'),
+                child: Lottie.asset('assets/lottie/desk.json', animate: false),
               ),
             ),
           ),
@@ -239,7 +239,7 @@ class MobileHomeContent extends StatelessWidget {
             height: size.height * 0.2,
             child: Align(
               child:
-                  Lottie.asset('assets/lottie/desk.json', fit: BoxFit.contain),
+                  Lottie.asset('assets/lottie/desk.json', animate: false , fit: BoxFit.contain),
             ),
           ),
           SizedBox(width: 24),
