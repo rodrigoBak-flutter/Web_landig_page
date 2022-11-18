@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:lottie/lottie.dart';
+
 import 'package:web_landing_page/src/widgets/responsive_widget.dart';
 
 import 'package:url_launcher/url_launcher_string.dart';
@@ -50,9 +50,8 @@ class DesktopHomeContent extends StatelessWidget {
           FadeInLeft(
             duration: Duration(milliseconds: 3000),
             child: Container(
-              width: width * .3,
               child: Align(
-                child: Lottie.asset('assets/lottie/desk.json', animate: false),
+                child: Image.asset('assets/images/developer.png'),
               ),
             ),
           ),
@@ -235,11 +234,10 @@ class MobileHomeContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: size.width * 0.2,
-            height: size.height * 0.2,
+            width: size.width * 0.55,
+            height: size.height * 0.30,
             child: Align(
-              child:
-                  Lottie.asset('assets/lottie/desk.json', animate: false , fit: BoxFit.contain),
+              child: Image.asset('assets/images/developer.png'),
             ),
           ),
           SizedBox(width: 24),
