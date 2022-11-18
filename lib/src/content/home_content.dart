@@ -7,12 +7,12 @@ import 'package:web_landing_page/src/widgets/responsive_widget.dart';
 
 import 'package:url_launcher/url_launcher_string.dart';
 
-const googlePlayURL = 'https://play.google.com/store/apps/developer?id=bak_app';
+
 const linkedin = 'https://es.linkedin.com/in/rodrigo-bak-flutter';
 const git = 'https://github.com/rodrigoBak-flutter';
 const instagram = 'https://www.instagram.com/bak_app/';
 const tiktok = 'https://www.tiktok.com/@bakapps';
-const appStoreURL = 'https://apps.apple.com/tw/app/youtube/id544007664';
+
 
 const title =
     'Estoy en busqueda de nuevos retos y experiencias para seguir aprendiendo y mejorando';
@@ -253,6 +253,7 @@ class MobileHomeContent extends StatelessWidget {
             subtitle,
             style: TextStyle(fontSize: 15),
           ),
+          /*
           SizedBox(height: 84),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -310,6 +311,7 @@ class MobileHomeContent extends StatelessWidget {
               ),
             ],
           ),
+           */
         ],
       ),
     );

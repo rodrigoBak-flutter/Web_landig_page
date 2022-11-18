@@ -71,8 +71,8 @@ class MyWebPage extends HookConsumerWidget {
           ),
         ),
       ),
-      //Implementar mensaje de WhatsApp y Email
-     // floatingActionButton: FlowButton(),
+      
+      floatingActionButton: FlowButton(),
     );
   }
 }

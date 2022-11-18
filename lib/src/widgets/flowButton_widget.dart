@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:web_landing_page/src/widgets/flow_widget.dart';
+
+const linkedin = 'https://es.linkedin.com/in/rodrigo-bak-flutter';
+const git = 'https://github.com/rodrigoBak-flutter';
+const instagram = 'https://www.instagram.com/bak_app/';
+const tiktok = 'https://www.tiktok.com/@bakapps';
 
 class FlowButton extends StatefulWidget {
   @override
@@ -55,44 +62,35 @@ class _FlowButtonState extends State<FlowButton>
           heroTag: '2',
           elevation: 0,
           backgroundColor: Color.fromARGB(255, 111, 201, 250),
-          child: Icon(Icons.whatsapp),
-          onPressed: () {
-            whatsapp();
-          },
+          child: Icon(FontAwesomeIcons.linkedinIn),
+          onPressed: () => launchUrlString(linkedin),
         ),
         FloatingActionButton(
           heroTag: '2',
           elevation: 0,
           backgroundColor: Color.fromARGB(255, 111, 201, 250),
-          child: Icon(Icons.email),
-          onPressed: () {
-            email();
-          },
+          child: Icon(FontAwesomeIcons.github),
+          onPressed: () => launchUrlString(git),
+        ),
+        FloatingActionButton(
+          heroTag: '2',
+          elevation: 0,
+          backgroundColor: Color.fromARGB(255, 111, 201, 250),
+          child: Icon(FontAwesomeIcons.tiktok),
+          onPressed: () => launchUrlString(tiktok),
+        ),
+        FloatingActionButton(
+          heroTag: '2',
+          elevation: 0,
+          backgroundColor: Color.fromARGB(255, 111, 201, 250),
+          child: Icon(FontAwesomeIcons.instagram),
+          onPressed: () => launchUrlString(instagram),
         ),
       ],
     );
   }
 
-  whatsapp() async {
-    const url = "whatsapp://send?phone=+CodigoyNumero";
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
+  
 
-  email() async {
-    final Uri _emailurl = Uri(
-      scheme: 'maito',
-      path: 'ejemplo@gmail.com',
-     // queryParameters: {'subject': ' '},
-    );
-
-    if (await canLaunch(_emailurl.toString())) {
-      await launch(_emailurl.toString());
-    } else {
-      throw 'Could not launch $_emailurl';
-    }
-  }
+  
 }
